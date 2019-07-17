@@ -1,0 +1,77 @@
+---
+title: "Chapter 2 Exercises"
+author: "Diana Soltani"
+output: html_notebook
+---
+
+### Conceptual
+
+1. For each parts (a) through (d), indicate whether we would generally expect the performance of a flexible statistical learning method to be better or worse than an inflexible method. Justify your answer.
+ (a) The sample size n is extremely large, and the number of predictors p is small.
+ 
+        A flexible method is more optimal in this case since the large sample size can better fit to the small number of predictors versus the inflexible method.
+ 
+ (b) The number of predictors p is extremely large, and the number of observations n is small.
+ 
+        A flexible method is worse since it may overfit the data.
+ 
+ (c) The relationship between the predictors and response is highly non-linear.
+ 
+        A more flexible method can better fit this type of data.
+ 
+ (d) The variance of the error terms, i.e. $\sigma$ = Var($\epsilon$), is extremely high.
+        A flexible method is worse in this case because it may fit to the noise of the data.
+
+2. Explain whether each scenario is a classification or regression problem, and indicate whether we are most interested in inference or prediction. Finally, provide n and p.
+ 
+ (a) We collect a set of data on the top 500 firms in the US. For reach firm, we record profit, number of employees, industry and the CEO salary. We are interested in understanding which factors affect CEO salary.
+ 
+        **Regression**
+ 
+        **Inference**
+ 
+        **n:** 500 firms
+ 
+        **p:** number of employees, profit, CEO salary
+ 
+ (b) We are considering launching a new product and wish to know whether it will be a success or failure. We collect data on 20 similar products that were previously launched. For each product, we have recorded whether it was a success or failure, price charged for the product, marketing budget, competition price, and ten other variables.
+ 
+        **Classification**
+ 
+        **Prediction**
+ 
+        **n:** 20 similar products
+ 
+        **p:** price charged for the product, marketing budget, competition price, and ten other variables.
+ 
+ (c) We are interested in predicting the % change in the USD/Euro exchange rate in relation to the weekly changes in the world stock markets. Hence we collect weekly data for all of 2012. For each week we record the % change in the USD/Euro, the % change in the US market, the % change in the British market, and the % change in the German market.
+ 
+        **Regression**
+ 
+        **Prediction**
+ 
+        **n:** 52 weekly changes
+ 
+        **p:** % change in US market, % change in German market, % change in British market
+ 
+ 
+3. We now revisit the bias-variance decomposition.
+
+(a) Provide a sketch of a typical (squared) bias, variance, training error, test error, and Bayes (or irreducible) error curves, on a single plot, as we go from less flexibel statistical learning methods towards more flexible approaches. The x-axis should represent the amount of flexibility in the method, and the y-axis should represent the values for each curve. There should be 5 curves. Make sure to lable each one.
+
+(b) Explain why each of the five curves has the shape displayed in part (a).
+
+### Applied
+
+
+
+---------------------------------
+```{r}
+plot(cars)
+```
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
+
+The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.

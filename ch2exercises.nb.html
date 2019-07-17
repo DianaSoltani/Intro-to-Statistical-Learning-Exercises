@@ -1752,8 +1752,51 @@ summary {
 
 
 <!-- rnb-text-begin -->
-<p>###Conceptual</p>
-<p>###Applied</p>
+<div id="conceptual" class="section level3">
+<h3>Conceptual</h3>
+<ol style="list-style-type: decimal">
+<li>For each parts (a) through (d), indicate whether we would generally expect the performance of a flexible statistical learning method to be better or worse than an inflexible method. Justify your answer.</li>
+</ol>
+<ol style="list-style-type: lower-alpha">
+<li><p>The sample size n is extremely large, and the number of predictors p is small.</p>
+<p>A flexible method is more optimal in this case since the large sample size can better fit to the small number of predictors versus the inflexible method.</p></li>
+<li><p>The number of predictors p is extremely large, and the number of observations n is small.</p>
+<p>A flexible method is worse since it may overfit the data.</p></li>
+<li><p>The relationship between the predictors and response is highly non-linear.</p>
+<p>A more flexible method can better fit this type of data.</p></li>
+<li><p>The variance of the error terms, i.e. <span class="math inline">\(\sigma\)</span> = Var(<span class="math inline">\(\epsilon\)</span>), is extremely high. A flexible method is worse in this case because it may fit to the noise of the data.</p></li>
+</ol>
+<ol start="2" style="list-style-type: decimal">
+<li>Explain whether each scenario is a classification or regression problem, and indicate whether we are most interested in inference or prediction. Finally, provide n and p.</li>
+</ol>
+<ol style="list-style-type: lower-alpha">
+<li><p>We collect a set of data on the top 500 firms in the US. For reach firm, we record profit, number of employees, industry and the CEO salary. We are interested in understanding which factors affect CEO salary.</p>
+<p><strong>Regression</strong></p>
+<p><strong>Inference</strong></p>
+<p><strong>n:</strong> 500 firms</p>
+<p><strong>p:</strong> number of employees, profit, CEO salary</p></li>
+<li><p>We are considering launching a new product and wish to know whether it will be a success or failure. We collect data on 20 similar products that were previously launched. For each product, we have recorded whether it was a success or failure, price charged for the product, marketing budget, competition price, and ten other variables.</p>
+<p><strong>Classification</strong></p>
+<p><strong>Prediction</strong></p>
+<p><strong>n:</strong> 20 similar products</p>
+<p><strong>p:</strong> price charged for the product, marketing budget, competition price, and ten other variables.</p></li>
+<li><p>We are interested in predicting the % change in the USD/Euro exchange rate in relation to the weekly changes in the world stock markets. Hence we collect weekly data for all of 2012. For each week we record the % change in the USD/Euro, the % change in the US market, the % change in the British market, and the % change in the German market.</p>
+<p><strong>Regression</strong></p>
+<p><strong>Prediction</strong></p>
+<p><strong>n:</strong> 52 weekly changes</p>
+<p><strong>p:</strong> % change in US market, % change in German market, % change in British market</p></li>
+</ol>
+<ol start="3" style="list-style-type: decimal">
+<li>We now revisit the bias-variance decomposition.</li>
+</ol>
+<ol style="list-style-type: lower-alpha">
+<li><p>Provide a sketch of a typical (squared) bias, variance, training error, test error, and Bayes (or irreducible) error curves, on a single plot, as we go from less flexibel statistical learning methods towards more flexible approaches. The x-axis should represent the amount of flexibility in the method, and the y-axis should represent the values for each curve. There should be 5 curves. Make sure to lable each one.</p></li>
+<li><p>Explain why each of the five curves has the shape displayed in part (a).</p></li>
+</ol>
+</div>
+<div id="applied" class="section level3">
+<h3>Applied</h3>
+<hr />
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucGxvdChjYXJzKVxuYGBgIn0= -->
@@ -1768,8 +1811,9 @@ summary {
 <p>When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the <em>Preview</em> button or press <em>Ctrl+Shift+K</em> to preview the HTML file).</p>
 <p>The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike <em>Knit</em>, <em>Preview</em> does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.</p>
 <!-- rnb-text-end -->
+</div>
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIkNoYXB0ZXIgMiBFeGVyY2lzZXMiDQphdXRob3I6ICJEaWFuYSBTb2x0YW5pIg0Kb3V0cHV0OiBodG1sX25vdGVib29rDQotLS0NCg0KIyMjQ29uY2VwdHVhbA0KDQojIyNBcHBsaWVkDQoNCmBgYHtyfQ0KcGxvdChjYXJzKQ0KYGBgDQoNCkFkZCBhIG5ldyBjaHVuayBieSBjbGlja2luZyB0aGUgKkluc2VydCBDaHVuayogYnV0dG9uIG9uIHRoZSB0b29sYmFyIG9yIGJ5IHByZXNzaW5nICpDdHJsK0FsdCtJKi4NCg0KV2hlbiB5b3Ugc2F2ZSB0aGUgbm90ZWJvb2ssIGFuIEhUTUwgZmlsZSBjb250YWluaW5nIHRoZSBjb2RlIGFuZCBvdXRwdXQgd2lsbCBiZSBzYXZlZCBhbG9uZ3NpZGUgaXQgKGNsaWNrIHRoZSAqUHJldmlldyogYnV0dG9uIG9yIHByZXNzICpDdHJsK1NoaWZ0K0sqIHRvIHByZXZpZXcgdGhlIEhUTUwgZmlsZSkuDQoNClRoZSBwcmV2aWV3IHNob3dzIHlvdSBhIHJlbmRlcmVkIEhUTUwgY29weSBvZiB0aGUgY29udGVudHMgb2YgdGhlIGVkaXRvci4gQ29uc2VxdWVudGx5LCB1bmxpa2UgKktuaXQqLCAqUHJldmlldyogZG9lcyBub3QgcnVuIGFueSBSIGNvZGUgY2h1bmtzLiBJbnN0ZWFkLCB0aGUgb3V0cHV0IG9mIHRoZSBjaHVuayB3aGVuIGl0IHdhcyBsYXN0IHJ1biBpbiB0aGUgZWRpdG9yIGlzIGRpc3BsYXllZC4NCg==</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIkNoYXB0ZXIgMiBFeGVyY2lzZXMiDQphdXRob3I6ICJEaWFuYSBTb2x0YW5pIg0Kb3V0cHV0OiBodG1sX25vdGVib29rDQotLS0NCg0KIyMjIENvbmNlcHR1YWwNCg0KMS4gRm9yIGVhY2ggcGFydHMgKGEpIHRocm91Z2ggKGQpLCBpbmRpY2F0ZSB3aGV0aGVyIHdlIHdvdWxkIGdlbmVyYWxseSBleHBlY3QgdGhlIHBlcmZvcm1hbmNlIG9mIGEgZmxleGlibGUgc3RhdGlzdGljYWwgbGVhcm5pbmcgbWV0aG9kIHRvIGJlIGJldHRlciBvciB3b3JzZSB0aGFuIGFuIGluZmxleGlibGUgbWV0aG9kLiBKdXN0aWZ5IHlvdXIgYW5zd2VyLg0KIChhKSBUaGUgc2FtcGxlIHNpemUgbiBpcyBleHRyZW1lbHkgbGFyZ2UsIGFuZCB0aGUgbnVtYmVyIG9mIHByZWRpY3RvcnMgcCBpcyBzbWFsbC4NCiANCiAgICAgICAgQSBmbGV4aWJsZSBtZXRob2QgaXMgbW9yZSBvcHRpbWFsIGluIHRoaXMgY2FzZSBzaW5jZSB0aGUgbGFyZ2Ugc2FtcGxlIHNpemUgY2FuIGJldHRlciBmaXQgdG8gdGhlIHNtYWxsIG51bWJlciBvZiBwcmVkaWN0b3JzIHZlcnN1cyB0aGUgaW5mbGV4aWJsZSBtZXRob2QuDQogDQogKGIpIFRoZSBudW1iZXIgb2YgcHJlZGljdG9ycyBwIGlzIGV4dHJlbWVseSBsYXJnZSwgYW5kIHRoZSBudW1iZXIgb2Ygb2JzZXJ2YXRpb25zIG4gaXMgc21hbGwuDQogDQogICAgICAgIEEgZmxleGlibGUgbWV0aG9kIGlzIHdvcnNlIHNpbmNlIGl0IG1heSBvdmVyZml0IHRoZSBkYXRhLg0KIA0KIChjKSBUaGUgcmVsYXRpb25zaGlwIGJldHdlZW4gdGhlIHByZWRpY3RvcnMgYW5kIHJlc3BvbnNlIGlzIGhpZ2hseSBub24tbGluZWFyLg0KIA0KICAgICAgICBBIG1vcmUgZmxleGlibGUgbWV0aG9kIGNhbiBiZXR0ZXIgZml0IHRoaXMgdHlwZSBvZiBkYXRhLg0KIA0KIChkKSBUaGUgdmFyaWFuY2Ugb2YgdGhlIGVycm9yIHRlcm1zLCBpLmUuICRcc2lnbWEkID0gVmFyKCRcZXBzaWxvbiQpLCBpcyBleHRyZW1lbHkgaGlnaC4NCiAgICAgICAgQSBmbGV4aWJsZSBtZXRob2QgaXMgd29yc2UgaW4gdGhpcyBjYXNlIGJlY2F1c2UgaXQgbWF5IGZpdCB0byB0aGUgbm9pc2Ugb2YgdGhlIGRhdGEuDQoNCjIuIEV4cGxhaW4gd2hldGhlciBlYWNoIHNjZW5hcmlvIGlzIGEgY2xhc3NpZmljYXRpb24gb3IgcmVncmVzc2lvbiBwcm9ibGVtLCBhbmQgaW5kaWNhdGUgd2hldGhlciB3ZSBhcmUgbW9zdCBpbnRlcmVzdGVkIGluIGluZmVyZW5jZSBvciBwcmVkaWN0aW9uLiBGaW5hbGx5LCBwcm92aWRlIG4gYW5kIHAuDQogDQogKGEpIFdlIGNvbGxlY3QgYSBzZXQgb2YgZGF0YSBvbiB0aGUgdG9wIDUwMCBmaXJtcyBpbiB0aGUgVVMuIEZvciByZWFjaCBmaXJtLCB3ZSByZWNvcmQgcHJvZml0LCBudW1iZXIgb2YgZW1wbG95ZWVzLCBpbmR1c3RyeSBhbmQgdGhlIENFTyBzYWxhcnkuIFdlIGFyZSBpbnRlcmVzdGVkIGluIHVuZGVyc3RhbmRpbmcgd2hpY2ggZmFjdG9ycyBhZmZlY3QgQ0VPIHNhbGFyeS4NCiANCiAgICAgICAgKipSZWdyZXNzaW9uKioNCiANCiAgICAgICAgKipJbmZlcmVuY2UqKg0KIA0KICAgICAgICAqKm46KiogNTAwIGZpcm1zDQogDQogICAgICAgICoqcDoqKiBudW1iZXIgb2YgZW1wbG95ZWVzLCBwcm9maXQsIENFTyBzYWxhcnkNCiANCiAoYikgV2UgYXJlIGNvbnNpZGVyaW5nIGxhdW5jaGluZyBhIG5ldyBwcm9kdWN0IGFuZCB3aXNoIHRvIGtub3cgd2hldGhlciBpdCB3aWxsIGJlIGEgc3VjY2VzcyBvciBmYWlsdXJlLiBXZSBjb2xsZWN0IGRhdGEgb24gMjAgc2ltaWxhciBwcm9kdWN0cyB0aGF0IHdlcmUgcHJldmlvdXNseSBsYXVuY2hlZC4gRm9yIGVhY2ggcHJvZHVjdCwgd2UgaGF2ZSByZWNvcmRlZCB3aGV0aGVyIGl0IHdhcyBhIHN1Y2Nlc3Mgb3IgZmFpbHVyZSwgcHJpY2UgY2hhcmdlZCBmb3IgdGhlIHByb2R1Y3QsIG1hcmtldGluZyBidWRnZXQsIGNvbXBldGl0aW9uIHByaWNlLCBhbmQgdGVuIG90aGVyIHZhcmlhYmxlcy4NCiANCiAgICAgICAgKipDbGFzc2lmaWNhdGlvbioqDQogDQogICAgICAgICoqUHJlZGljdGlvbioqDQogDQogICAgICAgICoqbjoqKiAyMCBzaW1pbGFyIHByb2R1Y3RzDQogDQogICAgICAgICoqcDoqKiBwcmljZSBjaGFyZ2VkIGZvciB0aGUgcHJvZHVjdCwgbWFya2V0aW5nIGJ1ZGdldCwgY29tcGV0aXRpb24gcHJpY2UsIGFuZCB0ZW4gb3RoZXIgdmFyaWFibGVzLg0KIA0KIChjKSBXZSBhcmUgaW50ZXJlc3RlZCBpbiBwcmVkaWN0aW5nIHRoZSAlIGNoYW5nZSBpbiB0aGUgVVNEL0V1cm8gZXhjaGFuZ2UgcmF0ZSBpbiByZWxhdGlvbiB0byB0aGUgd2Vla2x5IGNoYW5nZXMgaW4gdGhlIHdvcmxkIHN0b2NrIG1hcmtldHMuIEhlbmNlIHdlIGNvbGxlY3Qgd2Vla2x5IGRhdGEgZm9yIGFsbCBvZiAyMDEyLiBGb3IgZWFjaCB3ZWVrIHdlIHJlY29yZCB0aGUgJSBjaGFuZ2UgaW4gdGhlIFVTRC9FdXJvLCB0aGUgJSBjaGFuZ2UgaW4gdGhlIFVTIG1hcmtldCwgdGhlICUgY2hhbmdlIGluIHRoZSBCcml0aXNoIG1hcmtldCwgYW5kIHRoZSAlIGNoYW5nZSBpbiB0aGUgR2VybWFuIG1hcmtldC4NCiANCiAgICAgICAgKipSZWdyZXNzaW9uKioNCiANCiAgICAgICAgKipQcmVkaWN0aW9uKioNCiANCiAgICAgICAgKipuOioqIDUyIHdlZWtseSBjaGFuZ2VzDQogDQogICAgICAgICoqcDoqKiAlIGNoYW5nZSBpbiBVUyBtYXJrZXQsICUgY2hhbmdlIGluIEdlcm1hbiBtYXJrZXQsICUgY2hhbmdlIGluIEJyaXRpc2ggbWFya2V0DQogDQogDQozLiBXZSBub3cgcmV2aXNpdCB0aGUgYmlhcy12YXJpYW5jZSBkZWNvbXBvc2l0aW9uLg0KDQooYSkgUHJvdmlkZSBhIHNrZXRjaCBvZiBhIHR5cGljYWwgKHNxdWFyZWQpIGJpYXMsIHZhcmlhbmNlLCB0cmFpbmluZyBlcnJvciwgdGVzdCBlcnJvciwgYW5kIEJheWVzIChvciBpcnJlZHVjaWJsZSkgZXJyb3IgY3VydmVzLCBvbiBhIHNpbmdsZSBwbG90LCBhcyB3ZSBnbyBmcm9tIGxlc3MgZmxleGliZWwgc3RhdGlzdGljYWwgbGVhcm5pbmcgbWV0aG9kcyB0b3dhcmRzIG1vcmUgZmxleGlibGUgYXBwcm9hY2hlcy4gVGhlIHgtYXhpcyBzaG91bGQgcmVwcmVzZW50IHRoZSBhbW91bnQgb2YgZmxleGliaWxpdHkgaW4gdGhlIG1ldGhvZCwgYW5kIHRoZSB5LWF4aXMgc2hvdWxkIHJlcHJlc2VudCB0aGUgdmFsdWVzIGZvciBlYWNoIGN1cnZlLiBUaGVyZSBzaG91bGQgYmUgNSBjdXJ2ZXMuIE1ha2Ugc3VyZSB0byBsYWJsZSBlYWNoIG9uZS4NCg0KKGIpIEV4cGxhaW4gd2h5IGVhY2ggb2YgdGhlIGZpdmUgY3VydmVzIGhhcyB0aGUgc2hhcGUgZGlzcGxheWVkIGluIHBhcnQgKGEpLg0KDQojIyMgQXBwbGllZA0KDQoNCg0KLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tDQpgYGB7cn0NCnBsb3QoY2FycykNCmBgYA0KDQpBZGQgYSBuZXcgY2h1bmsgYnkgY2xpY2tpbmcgdGhlICpJbnNlcnQgQ2h1bmsqIGJ1dHRvbiBvbiB0aGUgdG9vbGJhciBvciBieSBwcmVzc2luZyAqQ3RybCtBbHQrSSouDQoNCldoZW4geW91IHNhdmUgdGhlIG5vdGVib29rLCBhbiBIVE1MIGZpbGUgY29udGFpbmluZyB0aGUgY29kZSBhbmQgb3V0cHV0IHdpbGwgYmUgc2F2ZWQgYWxvbmdzaWRlIGl0IChjbGljayB0aGUgKlByZXZpZXcqIGJ1dHRvbiBvciBwcmVzcyAqQ3RybCtTaGlmdCtLKiB0byBwcmV2aWV3IHRoZSBIVE1MIGZpbGUpLg0KDQpUaGUgcHJldmlldyBzaG93cyB5b3UgYSByZW5kZXJlZCBIVE1MIGNvcHkgb2YgdGhlIGNvbnRlbnRzIG9mIHRoZSBlZGl0b3IuIENvbnNlcXVlbnRseSwgdW5saWtlICpLbml0KiwgKlByZXZpZXcqIGRvZXMgbm90IHJ1biBhbnkgUiBjb2RlIGNodW5rcy4gSW5zdGVhZCwgdGhlIG91dHB1dCBvZiB0aGUgY2h1bmsgd2hlbiBpdCB3YXMgbGFzdCBydW4gaW4gdGhlIGVkaXRvciBpcyBkaXNwbGF5ZWQuDQo=</div>
 
 
 
